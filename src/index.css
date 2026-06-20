@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-white antialiased;
+    background-image: radial-gradient(circle at top left, rgba(14,165,233,0.14), transparent 24%), radial-gradient(circle at bottom right, rgba(56,189,248,0.12), transparent 28%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(14,165,233,0.24);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(14,165,233,0.18);
+  }
+}
+
+@layer components {
+  .fade-in {
+    animation: fadeInUp 0.9s ease-out both;
+  }
+
+  .float-up {
+    animation: floatUp 6.5s ease-in-out infinite;
+  }
+
+  .glow {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent text-primary font-semibold rounded-3xl shadow-xl shadow-cyan-500/20 hover:bg-sky-400 transition duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-accent text-accent font-semibold rounded-3xl hover:bg-accent hover:text-primary transition duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-12 text-center relative;
+  }
+
+  .card {
+    @apply bg-secondary/90 p-6 rounded-3xl border border-slate-800 shadow-lg shadow-black/20 hover:shadow-2xl transition duration-300;
+  }
+
+  .icon-badge {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-900/80 text-accent text-xl shadow-lg shadow-cyan-500/10;
+  }
+}
