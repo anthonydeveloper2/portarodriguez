@@ -65,7 +65,7 @@ const translations = {
       button: 'Enviar mensaje',
       social: 'O conecta conmigo en:'
     },
-    footer: '© 2025 Mi Portafolio. Hecho con ❤️ usando React y Tailwind CSS'
+    footer: '© 2025'
   },
   pt: {
     nav: {
