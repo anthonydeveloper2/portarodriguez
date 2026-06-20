@@ -124,7 +124,7 @@ const translations = {
       button: 'Enviar mensagem',
       social: 'Ou conecte-se comigo em:'
     },
-    footer: '© 2024 Meu Portfólio. Feito com ❤️ usando React e Tailwind CSS'
+    footer: '© 2025'
   },
   en: {
     nav: {
