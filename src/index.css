@@ -68,6 +68,38 @@
   }
 
   .icon-badge {
-    @apply inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-900/80 text-accent text-xl shadow-lg shadow-cyan-500/10;
+    @apply inline-flex items-center justify-center w-14 h-14 rounded-3xl bg-slate-900/90 text-accent text-2xl shadow-lg shadow-cyan-500/10;
+  }
+
+  .skill-logo {
+    @apply inline-flex items-center justify-center w-full h-full font-bold rounded-3xl;
+  }
+
+  .skill-logo.java {
+    @apply bg-[#f0db4f] text-slate-950;
+  }
+
+  .skill-logo.python {
+    @apply bg-[#3776ab] text-white;
+  }
+
+  .skill-logo.js {
+    @apply bg-[#f7df1e] text-slate-950;
+  }
+
+  .skill-logo.ts {
+    @apply bg-[#3178c6] text-white;
+  }
+
+  .skill-logo.mysql {
+    @apply bg-[#00758f] text-white;
+  }
+
+  .skill-logo.mongodb {
+    @apply bg-[#47a248] text-white;
+  }
+
+  .skill-logo.infra {
+    @apply bg-slate-700 text-white;
   }
 }

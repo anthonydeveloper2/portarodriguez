@@ -179,7 +179,7 @@ const translations = {
       title: 'Contact',
       intro: 'I am available for new full-stack projects. Write to me in Spanish or Portuguese.',
       labels: { name: 'Name', email: 'Email', message: 'Message' },
-      placeholders: { name: 'Your name', email: 'you@email.com', message: 'Tell me about your project...' },
+      placeholders: { name: 'Your name', email: 'example@gmail.com', message: 'Tell me about your project...' },
       button: 'Send message',
       social: 'Or connect with me on:'
     },
