@@ -30,8 +30,8 @@ const translations = {
     },
     about: {
       title: 'Sobre mí',
-      paragraph1: 'Soy un desarrollador full-stack de 20 años con más de 7 años de experiencia en tecnología. Comencé a tocar estos temas a los 13 años y desde entonces construyo aplicaciones que combinan backend robusto con interfaces limpias y responsivas.',
-      paragraph2: 'Trabajo con Java, Python, JavaScript, TypeScript, PHP, MySQL y MongoDB. También gestiono VPS/VDS, hosting, redes corporativas y administración de sistemas, por lo que puedo entregar soluciones completas de software e infraestructura.',
+      paragraph1: 'Soy Anthony Rodriguez, un desarrollador full-stack de 20 años con más de 7 años de experiencia en tecnología. Comencé a programar a los 13 años y desde entonces construyo soluciones que combinan backend robusto con interfaces limpias, rápidas y fáciles de usar.',
+      paragraph2: 'Trabajo con Java, Python, JavaScript, TypeScript, PHP, MySQL y MongoDB. Además, gestiono VPS/VDS, hosting, redes corporativas y administración de sistemas, lo que me permite entregar proyectos completos y listos para producción.',
       cards: [
         { title: 'Stack principal', text: 'Java · Python · PHP · JavaScript · TypeScript', subtext: 'Bases de datos: MySQL, MongoDB' },
         { title: 'Desarrollo', text: 'Backend, APIs REST, microservicios y automatización', subtext: 'Frontend moderno con React, Tailwind y experiencia UX' },
