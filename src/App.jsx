@@ -193,7 +193,7 @@ function App() {
   const content = translations[lang]
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setIsLoading(false), 900)
+    const timer = window.setTimeout(() => setIsLoading(false), 10000)
     return () => window.clearTimeout(timer)
   }, [])
 

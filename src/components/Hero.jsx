@@ -1,6 +1,31 @@
+import { useRef } from 'react'
 import Icon from './Icon'
 
 export default function Hero({ content }) {
+  const visualRef = useRef(null)
+
+  const handleVisualMove = (event) => {
+    if (!visualRef.current) return
+
+    const bounds = visualRef.current.getBoundingClientRect()
+    const x = (event.clientX - bounds.left) / bounds.width
+    const y = (event.clientY - bounds.top) / bounds.height
+
+    visualRef.current.style.setProperty('--tilt-x', `${(0.5 - y) * 8}deg`)
+    visualRef.current.style.setProperty('--tilt-y', `${(x - 0.5) * 10}deg`)
+    visualRef.current.style.setProperty('--glare-x', `${x * 100}%`)
+    visualRef.current.style.setProperty('--glare-y', `${y * 100}%`)
+  }
+
+  const resetVisual = () => {
+    if (!visualRef.current) return
+
+    visualRef.current.style.setProperty('--tilt-x', '0deg')
+    visualRef.current.style.setProperty('--tilt-y', '0deg')
+    visualRef.current.style.setProperty('--glare-x', '50%')
+    visualRef.current.style.setProperty('--glare-y', '50%')
+  }
+
   return (
     <section className="hero-section relative flex items-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-70" />
@@ -25,7 +50,12 @@ export default function Hero({ content }) {
 
         <div className="relative mx-auto w-full max-w-xl px-4 py-8 sm:px-10">
           <div className="hero-orbit absolute inset-0 m-auto aspect-square w-[92%] rounded-full" />
-          <div className="hero-visual relative rounded-[2rem] p-5 sm:p-7">
+          <div
+            ref={visualRef}
+            className="hero-visual relative rounded-[2rem] p-5 sm:p-7"
+            onMouseMove={handleVisualMove}
+            onMouseLeave={resetVisual}
+          >
             <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent"><Icon name="code" className="h-5 w-5" /></span>

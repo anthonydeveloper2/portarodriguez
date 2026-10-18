@@ -60,8 +60,17 @@ textarea:focus-visible {
 }
 
 @keyframes drift {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -12px, 0); }
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+
+@keyframes orbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gridShimmer {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
 }
 
 @keyframes pageEnter {
@@ -202,6 +211,7 @@ textarea:focus-visible {
   background-image: linear-gradient(rgba(222, 244, 222, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(222, 244, 222, 0.025) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, black, transparent 94%);
+  animation: gridShimmer 8s ease-in-out infinite;
 }
 
 .hero-copy { max-width: 680px; }
@@ -218,11 +228,37 @@ textarea:focus-visible {
 .hero-visual {
   position: relative;
   isolation: isolate;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --glare-x: 50%;
+  --glare-y: 50%;
   border: 1px solid rgba(226, 240, 224, 0.16);
   background: linear-gradient(145deg, rgba(29, 39, 31, 0.85), rgba(14, 19, 16, 0.9));
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.05);
-  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg);
+  transform: perspective(1200px) rotateX(calc(2deg + var(--tilt-x))) rotateY(calc(-5deg + var(--tilt-y)));
+  transition: transform 180ms ease-out, box-shadow 300ms ease;
   animation: drift 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-visual:hover {
+  box-shadow: 0 48px 110px rgba(0, 0, 0, 0.55), 0 0 40px rgba(197, 243, 107, 0.09), inset 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.hero-visual::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--glare-x) var(--glare-y), rgba(197, 243, 107, 0.12), transparent 38%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+}
+
+.hero-visual:hover::after {
+  opacity: 1;
 }
 
 .hero-visual::before {
@@ -241,10 +277,26 @@ textarea:focus-visible {
 .hero-orbit {
   border: 1px solid rgba(197, 243, 107, 0.16);
   box-shadow: 0 0 50px rgba(197, 243, 107, 0.06), inset 0 0 50px rgba(197, 243, 107, 0.035);
+  animation: orbitSpin 28s linear infinite;
 }
 
-.hero-code-line { background: rgba(203, 215, 202, 0.13); }
-.hero-code-line.accent { background: rgba(197, 243, 107, 0.62); }
+.hero-code-line {
+  background: rgba(203, 215, 202, 0.13);
+  transition: background 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+.hero-code-line.accent {
+  background: rgba(197, 243, 107, 0.62);
+  box-shadow: 0 0 14px rgba(197, 243, 107, 0.25);
+}
+
+.hero-visual:hover .hero-code-line {
+  background: rgba(197, 243, 107, 0.32);
+  transform: scaleX(1.03);
+}
+
+.hero-visual:hover .hero-code-line.accent {
+  background: var(--lime);
+}
 
 .page-enter { animation: pageEnter 0.7s ease-out both; }
 
@@ -259,7 +311,7 @@ textarea:focus-visible {
   background:
     radial-gradient(ellipse at 50% 42%, rgba(123, 167, 69, 0.12), transparent 22rem),
     var(--page);
-  animation: loaderFadeOut 0.35s ease 0.55s forwards;
+  animation: loaderFadeOut 0.35s ease 9.65s forwards;
 }
 
 .loader-mark {
@@ -310,7 +362,7 @@ textarea:focus-visible {
   background: var(--lime);
   transform: scaleX(0);
   transform-origin: left;
-  animation: loaderProgress 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: loaderProgress 9.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .section-divider { border-color: var(--line); }
@@ -333,6 +385,8 @@ textarea:focus-visible {
   .hero-section { min-height: auto; }
   .hero-title { font-size: clamp(3.15rem, 15vw, 5rem); }
   .hero-visual { transform: none; animation: none; }
+  .hero-visual:hover { transform: none; }
+  .hero-orbit { animation-duration: 42s; }
 }
 
 @media (prefers-reduced-motion: reduce) {
