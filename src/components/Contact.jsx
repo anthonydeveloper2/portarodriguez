@@ -31,41 +31,41 @@ export default function Contact({ content }) {
           <p className="text-gray-300 mb-8 text-center">{content.intro}</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="block text-sm font-semibold mb-2">{content.labels.name}</label>
+            <div className="form-field">
+              <label className="form-label">{content.labels.name}</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-primary border border-accent rounded-xl focus:outline-none focus:ring-2 focus:ring-accent text-white"
+                className="form-input"
                 placeholder={content.placeholders.name}
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold mb-2">{content.labels.email}</label>
+            <div className="form-field">
+              <label className="form-label">{content.labels.email}</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-primary border border-accent rounded-xl focus:outline-none focus:ring-2 focus:ring-accent text-white"
+                className="form-input"
                 placeholder={content.placeholders.email}
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold mb-2">{content.labels.message}</label>
+            <div className="form-field">
+              <label className="form-label">{content.labels.message}</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-3 bg-primary border border-accent rounded-xl focus:outline-none focus:ring-2 focus:ring-accent text-white resize-none"
+                className="form-input form-textarea"
                 placeholder={content.placeholders.message}
               />
             </div>
