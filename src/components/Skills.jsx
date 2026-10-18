@@ -1,13 +1,12 @@
 import Icon from './Icon'
 
 const skillLogos = {
-  1: <span className="skill-logo java">J</span>,
-  2: <span className="skill-logo python">Py</span>,
-  3: <span className="skill-logo js">JS</span>,
-  4: <span className="skill-logo ts">TS</span>,
-  5: <span className="skill-logo mysql">SQL</span>,
-  6: <span className="skill-logo mongodb">M</span>,
-  7: <span className="skill-logo infra"><Icon name="server" /></span>
+  1: '/icons/java.svg',
+  2: '/icons/python.svg',
+  3: '/icons/javascript.svg',
+  4: '/icons/typescript.svg',
+  5: '/icons/mysql.svg',
+  6: '/icons/mongodb.svg'
 }
 
 export default function Skills({ content }) {
@@ -23,7 +22,9 @@ export default function Skills({ content }) {
           {content.items.map((skill, index) => (
             <div key={skill.id} style={{ animationDelay: `${index * 90}ms` }} className="card border border-slate-800 p-6 space-y-4 hover:-translate-y-1 transform transition duration-300 fade-in">
               <div className="icon-badge">
-                {skillLogos[skill.id] || skill.icon}
+                {skillLogos[skill.id]
+                  ? <img className="skill-logo-img" src={skillLogos[skill.id]} alt={`${skill.title} logo`} loading="lazy" />
+                  : <Icon name="server" className="h-6 w-6" />}
               </div>
 
               <div>

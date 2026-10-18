@@ -162,15 +162,16 @@ textarea:focus-visible {
     background: rgba(197, 243, 107, 0.07);
   }
 
-  .skill-logo { @apply inline-flex h-full w-full items-center justify-center rounded-2xl font-bold; }
-  .skill-logo.java { @apply bg-[#f0db4f] text-slate-950; }
-  .skill-logo.python { @apply bg-[#3776ab] text-white; }
-  .skill-logo.js { @apply bg-[#f7df1e] text-slate-950; }
-  .skill-logo.ts { @apply bg-[#3178c6] text-white; }
-  .skill-logo.mysql { @apply bg-[#00758f] text-white; }
-  .skill-logo.mongodb { @apply bg-[#47a248] text-white; }
-  .skill-logo.infra { @apply bg-slate-700 text-white; }
 }
+
+.skill-logo-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  transition: transform 250ms ease;
+}
+
+.card:hover .skill-logo-img { transform: scale(1.12) rotate(-4deg); }
 
 .site-nav {
   border-color: var(--line);
