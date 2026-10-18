@@ -1,3 +1,5 @@
+import Icon from './Icon'
+
 export default function Projects({ content }) {
   return (
     <section id="projects" className="py-20 px-4 bg-secondary">
@@ -8,8 +10,8 @@ export default function Projects({ content }) {
         </p>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {content.list.map((project) => (
-            <div key={project.id} className="card group hover:-translate-y-1 transform transition duration-300">
+          {content.list.map((project, index) => (
+            <div key={project.id} style={{ animationDelay: `${index * 120}ms` }} className="card group fade-in hover:-translate-y-1 transform transition duration-300">
               <div className="project-preview mb-6 overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-950/80 p-4 shadow-inner shadow-black/20">
                 <div className="flex justify-between items-center mb-4">
                   <div className="h-2.5 w-24 rounded-full bg-slate-800" />
@@ -36,7 +38,7 @@ export default function Projects({ content }) {
                 </div>
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="icon-badge">{project.icon}</div>
+                <div className="icon-badge"><Icon name={project.icon} className="h-6 w-6" /></div>
                 <h3 className="text-2xl font-bold text-accent group-hover:text-sky-300">
                   {project.title}
                 </h3>

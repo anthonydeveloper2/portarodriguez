@@ -1,11 +1,13 @@
+import Icon from './Icon'
+
 const skillLogos = {
-  1: <span className="skill-logo java">☕</span>,
-  2: <span className="skill-logo python">🐍</span>,
+  1: <span className="skill-logo java">J</span>,
+  2: <span className="skill-logo python">Py</span>,
   3: <span className="skill-logo js">JS</span>,
   4: <span className="skill-logo ts">TS</span>,
-  5: <span className="skill-logo mysql">My</span>,
-  6: <span className="skill-logo mongodb">MDB</span>,
-  7: <span className="skill-logo infra">⚙️</span>
+  5: <span className="skill-logo mysql">SQL</span>,
+  6: <span className="skill-logo mongodb">M</span>,
+  7: <span className="skill-logo infra"><Icon name="server" /></span>
 }
 
 export default function Skills({ content }) {
@@ -18,8 +20,8 @@ export default function Skills({ content }) {
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {content.items.map((skill) => (
-            <div key={skill.id} className="card border border-slate-800 p-6 space-y-4 hover:-translate-y-1 transform transition duration-300 fade-in">
+          {content.items.map((skill, index) => (
+            <div key={skill.id} style={{ animationDelay: `${index * 90}ms` }} className="card border border-slate-800 p-6 space-y-4 hover:-translate-y-1 transform transition duration-300 fade-in">
               <div className="icon-badge">
                 {skillLogos[skill.id] || skill.icon}
               </div>

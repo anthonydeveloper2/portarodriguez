@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Icon from './Icon'
 
 export default function Navbar({ content, lang, setLang }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -43,11 +44,13 @@ export default function Navbar({ content, lang, setLang }) {
             </div>
           </div>
 
-          <button 
+          <button
             className="md:hidden text-3xl text-gray-300 hover:text-accent transition duration-300"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}
           >
-            ☰
+            <Icon name={isOpen ? 'close' : 'menu'} className="h-6 w-6" />
           </button>
         </div>
 

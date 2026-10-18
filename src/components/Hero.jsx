@@ -1,3 +1,5 @@
+import Icon from './Icon'
+
 export default function Hero({ content }) {
   return (
     <section className="hero-section relative flex items-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
@@ -26,7 +28,7 @@ export default function Hero({ content }) {
           <div className="hero-visual relative rounded-[2rem] p-5 sm:p-7">
             <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-lg text-accent">✳</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent"><Icon name="code" className="h-5 w-5" /></span>
                 <div>
                   <p className="text-sm font-semibold text-white">anthony.dev</p>
                   <p className="text-xs text-slate-400">Full-stack developer</p>
@@ -52,7 +54,7 @@ export default function Hero({ content }) {
                   <p className="text-[10px] uppercase tracking-wider text-slate-400">Stack</p>
                   <p className="mt-1 text-xs font-medium text-white">Java · React · Cloud</p>
                 </div>
-                <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-3xl text-accent shadow-[0_0_40px_rgba(197,243,107,0.15)]">✳</div>
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent shadow-[0_0_40px_rgba(197,243,107,0.15)]"><Icon name="sparkle" className="h-9 w-9" /></div>
               </div>
             </div>
 
