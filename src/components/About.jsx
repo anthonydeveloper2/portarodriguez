@@ -16,6 +16,16 @@ export default function About({ content }) {
                 <h3 className="text-xl font-semibold mb-2 text-accent">{card.title}</h3>
                 <p className="text-gray-300">{card.text}</p>
                 {card.subtext && <p className="text-gray-400 mt-2 text-sm">{card.subtext}</p>}
+                {card.link && (
+                  <a
+                    href={card.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-accent transition hover:text-white"
+                  >
+                    {card.linkText}
+                  </a>
+                )}
               </div>
             ))}
           </div>

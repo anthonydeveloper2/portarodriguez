@@ -31,11 +31,12 @@ const translations = {
     about: {
       title: 'Sobre mí',
       paragraph1: 'Soy Anthony Rodriguez, desarrollador full-stack especializado en crear productos digitales de principio a fin. Combino backend robusto con interfaces limpias, rápidas y fáciles de usar.',
-      paragraph2: 'Trabajo con Java, Python, JavaScript, TypeScript, PHP, MySQL y MongoDB. Además, gestiono VPS/VDS, hosting, redes corporativas y administración de sistemas, lo que me permite entregar proyectos completos y listos para producción.',
+      paragraph2: 'Trabajo con Java, Python, JavaScript, TypeScript, PHP, MySQL y MongoDB. También gestiono VPS/VDS, hosting, redes corporativas y sistemas, y tengo experiencia moderando y administrando servidores de Discord.',
       cards: [
         { title: 'Stack principal', text: 'Java · Python · PHP · JavaScript · TypeScript', subtext: 'Bases de datos: MySQL, MongoDB' },
         { title: 'Desarrollo', text: 'Backend, APIs REST, microservicios y automatización', subtext: 'Frontend moderno con React, Tailwind y experiencia UX' },
-        { title: 'Idiomas', text: 'Español · Portugués', subtext: 'Comunicación técnica y soporte en ambos idiomas' }
+        { title: 'Idiomas', text: 'Español · Portugués', subtext: 'Comunicación técnica y soporte en ambos idiomas' },
+        { title: 'Vaxon Cloud', text: 'Hosting de servidores para 7 Days to Die con hardware de alto rendimiento.', subtext: 'Co-founder & CEO', link: 'https://vaxon.net', linkText: 'Visitar vaxon.net ↗' }
       ]
     },
     skills: {
@@ -90,11 +91,12 @@ const translations = {
     about: {
       title: 'Sobre mim',
       paragraph1: 'Sou Anthony Rodriguez, desenvolvedor full-stack especializado em criar produtos digitais de ponta a ponta. Combino backend robusto com interfaces limpas, rápidas e fáceis de usar.',
-      paragraph2: 'Trabalho com Java, Python, JavaScript, TypeScript, PHP, MySQL e MongoDB. Também gerencio VPS/VDS, hosting, redes corporativas e administração de sistemas, por isso posso entregar soluções completas de software e infraestrutura.',
+      paragraph2: 'Trabalho com Java, Python, JavaScript, TypeScript, PHP, MySQL e MongoDB. Também gerencio VPS/VDS, hosting, redes corporativas e sistemas, além de ter experiência moderando e administrando servidores no Discord.',
       cards: [
         { title: 'Stack principal', text: 'Java · Python · PHP · JavaScript · TypeScript', subtext: 'Bancos de dados: MySQL, MongoDB' },
         { title: 'Desenvolvimento', text: 'Backend, APIs REST, microsserviços e automação', subtext: 'Frontend moderno com React, Tailwind e experiência UX' },
-        { title: 'Idiomas', text: 'Espanhol · Português', subtext: 'Comunicação técnica e suporte em ambos os idiomas' }
+        { title: 'Idiomas', text: 'Espanhol · Português', subtext: 'Comunicação técnica e suporte em ambos os idiomas' },
+        { title: 'Vaxon Cloud', text: 'Hospedagem de servidores para 7 Days to Die com hardware de alto desempenho.', subtext: 'Co-founder & CEO', link: 'https://vaxon.net', linkText: 'Visitar vaxon.net ↗' }
       ]
     },
     skills: {
@@ -149,11 +151,12 @@ const translations = {
     about: {
       title: 'About me',
       paragraph1: 'I am Anthony Rodriguez, a full-stack developer focused on building digital products from idea to launch. I combine robust backends with clean, fast, and easy-to-use interfaces.',
-      paragraph2: 'I work with Java, Python, JavaScript, TypeScript, PHP, MySQL and MongoDB. I also manage VPS/VDS, hosting, corporate networks and systems administration, so I can deliver full software and infrastructure solutions.',
+      paragraph2: 'I work with Java, Python, JavaScript, TypeScript, PHP, MySQL and MongoDB. I also manage VPS/VDS, hosting, corporate networks and systems, and have experience moderating and administering Discord servers.',
       cards: [
         { title: 'Core stack', text: 'Java · Python · PHP · JavaScript · TypeScript', subtext: 'Databases: MySQL, MongoDB' },
         { title: 'Development', text: 'Backend, REST APIs, microservices and automation', subtext: 'Modern frontend with React, Tailwind and UX experience' },
-        { title: 'Languages', text: 'Spanish · Portuguese', subtext: 'Technical communication and support in both languages' }
+        { title: 'Languages', text: 'Spanish · Portuguese', subtext: 'Technical communication and support in both languages' },
+        { title: 'Vaxon Cloud', text: '7 Days to Die server hosting with high-performance hardware.', subtext: 'Co-founder & CEO', link: 'https://vaxon.net', linkText: 'Visit vaxon.net ↗' }
       ]
     },
     skills: {
